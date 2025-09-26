@@ -1,0 +1,34 @@
+Key Observations
+
+Both arrays are sorted in non-decreasing order.
+
+The first array (nums1) has enough extra space at the end to accommodate all elements of the second array (nums2).
+
+Intuition
+
+If we try to merge the arrays starting from the beginning, we may need to repeatedly shift elements in nums1 whenever an element from nums2 is smaller. This becomes inefficient.
+
+Instead, notice that nums1 already has extra space at the end. We can leverage this by starting the comparison from the end of both arrays. At each step, we place the larger of the two elements (nums1[i] or nums2[j]) into the last available position.
+
+This way, the largest elements are placed directly at their correct positions without requiring any shifts.
+
+Example
+nums1 = [8, 9, 10, 0, 0, 0]
+nums2 = [5, 6, 7]
+
+
+Compare nums1[2] = 10 and nums2[2] = 7.
+
+Since 10 > 7, place 10 at the end of nums1.
+
+Now 10 is already in its correct position and does not need to be moved again.
+
+We continue this process until all elements are placed.
+
+Pattern
+
+Approach: Two pointers (starting from the end of both arrays)
+
+Time Complexity: O(m + n) (we make at most m + n comparisons/placements)
+
+Space Complexity: O(1) (in-place merging, no extra storage required)
