@@ -1,0 +1,9 @@
+Intution
+we find all the elements which are not equal to val, and place them one 
+by one in the beginning of the array, as a result of this all the elements
+(if any) equal to val are placed at the end of the array and all non-equal elements
+are at the beginning, at last we return the index of last placed element +1.
+i.e i+1
+
+TC: O(n)
+SC:O(1)
